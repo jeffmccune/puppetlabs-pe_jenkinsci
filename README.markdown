@@ -10,14 +10,21 @@ This module needs to be installed on the Puppet Master system.  With Puppet
 Enterprise already installed with the master role, these commands will put the
 Puppet pe\_facterci module in the correct place.
 
-    cd /etc/puppetlabs/puppet/modules
-    puppet-module install puppetlabs-pe_facterci
-    cd pe_facterci
-    rake setup
+    % cd /etc/puppetlabs/puppet/modules
+    % puppet-module install puppetlabs-pe_facterci
+    Installed "puppetlabs-pe_facterci-0.0.1" into directory: pe_facterci
+    % cd pe_facterci
+    % /opt/puppet/bin/rake setup
+    (in /etc/puppetlabs/puppet/modules/pe_facterci)
+    Cleaned module cache.
+    Installed "rtyler-jenkins-0.0.1" into directory: jenkins
+
+At the end of these commands the jenkins module will also be installed into
+/etc/puppetlabs/puppet/modules/jenkins
 
 At the time of this documentation, the jenkins module is not hosted on the
 Forge so the rake setup task will install the jenkins module from the
-resources directory.
+resources directory of this module.
 
 If you'd like to simply setup the Jenkins CI service and run the Facter test
 suite on the same system running the Puppet Master, you can simply run:
